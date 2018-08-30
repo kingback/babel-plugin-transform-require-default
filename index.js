@@ -50,16 +50,17 @@ module.exports = function (babel, options) {
           requirePaths = [];
         },
         exit(path) {
-          requirePaths = requirePaths.filter(function(p) {
-            return isRequireCallExpression(p) && !isExcluded(options.exclude, p.node.arguments[0].value);
-          });
-
+          var count = 0;
           if (!requirePaths.length) return;
 
-          path.node.body.unshift(template(requireDefaultFuncTemp)());
           requirePaths.forEach(function(p) {
-            p.replaceWithSourceString(`${requireDefaultFunc}(require("${p.node.arguments[0].value}"))`);
+            if (isRequireCallExpression(p) && !isExcluded(options.exclude, p.node.arguments[0].value)) {
+              count++;
+              p.replaceWithSourceString(`${requireDefaultFunc}(require("${p.node.arguments[0].value}"))`);
+            }
           });
+
+          count && path.node.body.unshift(template(requireDefaultFuncTemp)());
         }
       },
       CallExpression(path) {
