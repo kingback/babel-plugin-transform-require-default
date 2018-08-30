@@ -1,0 +1,30 @@
+{
+  "name": "babel-plugin-transform-require-default",
+  "version": "0.1.0",
+  "description": "Auto transform require to require default in Babel 6/7",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kingback/babel-plugin-transform-require-default.git"
+  },
+  "keywords": [
+    "babel-plugin"
+  ],
+  "author": {
+    "name": "kingback",
+    "email": "ningzbruc@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kingback/babel-plugin-transform-require-default/issues"
+  },
+  "homepage": "https://github.com/kingback/babel-plugin-transform-require-default#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "jest": "^23.5.0"
+  }
+}

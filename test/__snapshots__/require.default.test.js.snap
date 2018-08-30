@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`require default 1`] = `
+"function __require_default_func__(module) {
+  return module && module.__esModule ? module[\\"default\\"] : module;
+}
+
+a.require(\\"xxx\\");
+arequire(\\"xxx\\");
+require(ddd);
+require('');
+require();
+__require_default_func__(require(\\"xxx\\"));
+__require_default_func__(require(\\"xxx\\"))();
+require(111);
+require('xxx').default;
+require('xxx')['default'];"
+`;
