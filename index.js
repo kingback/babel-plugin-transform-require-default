@@ -60,7 +60,7 @@ module.exports = function (babel, options) {
       CallExpression(path) {
       	if (
           isRequireCallExpression(path) && 
-          requirePaths.indexOf(path) < -1 && 
+          requirePaths.indexOf(path) < 0 && 
           !isExcluded(options.exclude, path.node.arguments[0].value)
         ) {
           requirePaths.push(path);
