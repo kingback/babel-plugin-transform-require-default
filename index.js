@@ -1,5 +1,5 @@
 var requireDefaultFunc = '__require_default_func__';
-var requireDefaultFuncTemp = `function ${requireDefaultFunc}(module) { return module && module.__esModule ? module["default"] : module; }`;
+var requireDefaultFuncTemp = `function ${requireDefaultFunc}(module) { return module && module.__esModule && typeof module["default"] !== 'undefined' ? module["default"] : module; }`;
 
 function typeOf(v) {
   return Object.prototype.toString.call(v).slice(8, -1).toLowerCase();
