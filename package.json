@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-require-default",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Auto transform require to require default in Babel 6/7",
   "main": "index.js",
   "scripts": {
