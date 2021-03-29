@@ -2,7 +2,7 @@ var requireDefaultFunc = '__require_default_func__';
 var requireDefaultFuncTemp = `function ${requireDefaultFunc}(module) { 
   if (module && module.__esModule && typeof module["default"] !== "undefined") {
     for (var k in module) {
-      if (k !== "default" && k !== "__esModule") {
+      if (k !== "default" && k !== "__esModule" && module["default"][k] !== module[k]) {
         module["default"][k] = module[k];
       }
     }
