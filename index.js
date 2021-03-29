@@ -61,6 +61,7 @@ module.exports = function (babel, options) {
         },
         exit(path) {
           if (!requirePaths.length) return;
+          if (path.scope.bindings[requireDefaultFunc]) return;
           path.node.body.unshift(template(requireDefaultFuncTemp)());
           requirePaths.forEach(function(p) {
             p.replaceWithSourceString(`${requireDefaultFunc}(require("${p.node.arguments[0].value}"))`);
